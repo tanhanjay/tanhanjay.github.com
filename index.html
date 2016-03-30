@@ -68,6 +68,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-LearnCode笔记-ES6新特性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/30/LearnCode笔记-ES6新特性/" class="article-date">
+  <time datetime="2016-03-30T13:56:59.000Z" itemprop="datePublished">2016-03-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/30/LearnCode笔记-ES6新特性/">LearnCode笔记--ES6新特性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="E6的写法"><a href="#E6的写法" class="headerlink" title="E6的写法"></a>E6的写法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"tanhanjay"</span>;</span><br><span class="line"><span class="keyword">var</span> myob =&#123;</span><br><span class="line">    age,</span><br><span class="line">    name</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myob.age);<span class="comment">//result: 30</span></span><br></pre></td></tr></table></figure>
+<h3 id="let-定义一个新变量"><a href="#let-定义一个新变量" class="headerlink" title="let 定义一个新变量"></a>let 定义一个新变量</h3><p>​    在es5.1中，block不会形成单独的作用域scope，而在es6中加入了let 声明一个变量 若其在block内声明，在block之外let声明的变量不会被获取到。</p>
+<p>Example：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//use let</span></span><br><span class="line"><span class="comment">//if(true)&#123;&#125; 是一个block</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> a =<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//a is undefine</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//use var</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a =<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//a = 10</span></span><br></pre></td></tr></table></figure>
+<h3 id="class-关键字定义对象"><a href="#class-关键字定义对象" class="headerlink" title="class 关键字定义对象"></a>class 关键字定义对象</h3><p>es6中我们可以使用class来定义类与java中定义类非常相似，看下面的用法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  <span class="comment">//初始化函数</span></span><br><span class="line">  <span class="keyword">constructor</span>()&#123;  				</span><br><span class="line">  	<span class="keyword">this</span>.name = <span class="string">"tanhanjay"</span>;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="keyword">static</span> foo()&#123;				<span class="comment">//static关键字</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello ,my name is: "</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">  bar()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//并且支持继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  barz()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child();</span><br><span class="line">Child.foo();<span class="comment">//结果是： Hello ,my name is :Child</span></span><br></pre></td></tr></table></figure>
+<p>可以看出es6中不仅支持非常类似java的类的定义，而且 extends static 关键字的用法也基本相同。</p>
+<p>上例中有一个有趣的地方,用于foo方法使用static关键字修饰，所以为静态方法，直接使用类名调用，这时并未经过constructor函数进行初始化，而Child.foo();执行的结果是： Hello ,my name is :Child。后来测试，foo方法的this.name改为this.names 结果依旧是一样的，实际上它都等于this并不会报错。</p>
+<h3 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h3><p>javascript大量使用匿名函数来作为方法的参数 称为 callback。now arrow function can be simpler for it .</p>
+<p>Example:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;++val&#125;);</span><br><span class="line"><span class="comment">//es6中可以写成</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(val =&gt; ++val);</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var module = &#123;</span><br><span class="line">    age: 30,</span><br><span class="line">    foo: function()&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(this.age);</span><br><span class="line">        &#125;.bind(this),100);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>bind去掉之后，result为undefined</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="tanhanjay.top/2016/03/30/LearnCode笔记-ES6新特性/" data-id="cimf02ydd0004lvz31qf8aget" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Jade教程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/28/Jade教程/" class="article-date">
@@ -463,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/28/Jade教程/" data-id="cimezcvun0005ikz3tvwdqlbr" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/28/Jade教程/" data-id="cimf02ydk000alvz310utm4t0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jade/">Jade</a></li></ul>
@@ -510,7 +562,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/28/hello-world/" data-id="cimezcvuq0007ikz3nwm2xm7u" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/28/hello-world/" data-id="cimf02ydi0008lvz33q4d1rgk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -653,7 +705,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/27/MDN-CSS入门教程学习笔记/" data-id="cimezcvui0003ikz32am7b5r3" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/27/MDN-CSS入门教程学习笔记/" data-id="cimf02yde0005lvz3kjge7s3n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -694,7 +746,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/26/常用的终端(Terminal)命令/" data-id="cimezcvuc0001ikz3wl4qh2gd" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/26/常用的终端(Terminal)命令/" data-id="cimf02yd60001lvz3900s1pmh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -744,7 +796,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/25/JavaScript Bad Parts/" data-id="cimezcvuk0004ikz3zxxg74qk" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/25/JavaScript Bad Parts/" data-id="cimf02ydb0003lvz369kc375z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -820,7 +872,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/20/JavaScript的毒瘤/" data-id="cimezcvu50000ikz3z99p5uqh" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/20/JavaScript的毒瘤/" data-id="cimf02yd20000lvz36fgdzndj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -849,7 +901,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jade/">Jade</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jade/">Jade</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
   </div>
 
@@ -859,7 +911,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Jade/" style="font-size: 10px;">Jade</a>
+      <a href="/tags/Jade/" style="font-size: 10px;">Jade</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
     </div>
   </div>
 
@@ -881,6 +933,10 @@
       <ul>
         
           <li>
+            <a href="/2016/03/30/LearnCode笔记-ES6新特性/">LearnCode笔记--ES6新特性</a>
+          </li>
+        
+          <li>
             <a href="/2016/03/28/Jade教程/">Jade教程</a>
           </li>
         
@@ -894,10 +950,6 @@
         
           <li>
             <a href="/2016/03/26/常用的终端(Terminal)命令/">常用的终端（Terminal）命令（适用于Mac OSX）</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/25/JavaScript Bad Parts/">JavaScript Bad Parts</a>
           </li>
         
       </ul>
