@@ -95,7 +95,7 @@
 <p>Example：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//use let</span></span><br><span class="line"><span class="comment">//if(true)&#123;&#125; 是一个block</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> a =<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//a is undefine</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//use var</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> a =<span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//a = 10</span></span><br></pre></td></tr></table></figure>
 <h3 id="class-关键字定义对象"><a href="#class-关键字定义对象" class="headerlink" title="class 关键字定义对象"></a>class 关键字定义对象</h3><p>es6中我们可以使用class来定义类与java中定义类非常相似，看下面的用法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  <span class="comment">//初始化函数</span></span><br><span class="line">  <span class="keyword">constructor</span>()&#123;  				</span><br><span class="line">  	<span class="keyword">this</span>.name = <span class="string">"tanhanjay"</span>;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="keyword">static</span> foo()&#123;				<span class="comment">//static关键字</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello ,my name is: "</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">  bar()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//并且支持继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  barz()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child();</span><br><span class="line">Child.foo();<span class="comment">//结果是： Hello ,my name is :Child</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  <span class="comment">//初始化函数</span></span><br><span class="line">  <span class="keyword">constructor</span>()&#123;  				</span><br><span class="line">  	<span class="keyword">this</span>.name = <span class="string">"tanhanjay"</span>;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="keyword">static</span> foo()&#123;				<span class="comment">//static关键字</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello ,my name is: "</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">  bar()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//并且支持继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">  barz()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child();</span><br><span class="line">Child.foo();<span class="comment">//结果是： Hello ,my name is :Child</span></span><br></pre></td></tr></table></figure>
 <p>可以看出es6中不仅支持非常类似java的类的定义，而且 extends static 关键字的用法也基本相同。</p>
 <p>上例中有一个有趣的地方,用于foo方法使用static关键字修饰，所以为静态方法，直接使用类名调用，这时并未经过constructor函数进行初始化，而Child.foo();执行的结果是： Hello ,my name is :Child。后来测试，foo方法的this.name改为this.names 结果依旧是一样的，实际上它都等于this并不会报错。</p>
 <h3 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h3><p>javascript大量使用匿名函数来作为方法的参数 称为 callback。now arrow function can be simpler for it .</p>
@@ -103,12 +103,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;++val&#125;);</span><br><span class="line"><span class="comment">//es6中可以写成</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(val =&gt; ++val);</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var module = &#123;</span><br><span class="line">    age: 30,</span><br><span class="line">    foo: function()&#123;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(this.age);</span><br><span class="line">        &#125;.bind(this),100);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>bind去掉之后，result为undefined</p>
-
+<p>bind去掉之后，result为undefined，也就是说，settimeout等类似的函数，会使原来的方法丢失上下文（context），但是arrow function 会自动将this  bind到方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//use arrow function will get correct result</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">    age: <span class="number">30</span>,</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">        &#125;,<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="module-system"><a href="#module-system" class="headerlink" title="module system"></a>module system</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//another file </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mymodule = <span class="built_in">require</span><span class="string">"myModule"</span>;</span><br><span class="line"><span class="keyword">var</span> foo = myModule.foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">//now you can write as here:</span></span><br><span class="line"><span class="keyword">import</span> myMOdule <span class="keyword">from</span> <span class="string">"myModule"</span>;</span><br><span class="line"><span class="comment">//even you can write as this:</span></span><br><span class="line"><span class="keyword">import</span> &#123;foo,bar&#125; <span class="keyword">from</span> <span class="string">"myModule"</span>;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/30/LearnCode笔记-ES6新特性/" data-id="cimf02ydd0004lvz31qf8aget" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/30/LearnCode笔记-ES6新特性/" data-id="cimgf3taq0007hxz3cyxq5kk6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -515,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/28/Jade教程/" data-id="cimf02ydk000alvz310utm4t0" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/28/Jade教程/" data-id="cimgf3tar0009hxz3q1lqtgqq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jade/">Jade</a></li></ul>
@@ -562,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/28/hello-world/" data-id="cimf02ydi0008lvz33q4d1rgk" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/28/hello-world/" data-id="cimgf3tam0005hxz3gkbdwz2m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -705,7 +706,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/27/MDN-CSS入门教程学习笔记/" data-id="cimf02yde0005lvz3kjge7s3n" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/27/MDN-CSS入门教程学习笔记/" data-id="cimgf3taj0003hxz3no4rxuk4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -746,7 +747,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/26/常用的终端(Terminal)命令/" data-id="cimf02yd60001lvz3900s1pmh" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/26/常用的终端(Terminal)命令/" data-id="cimgf3tal0004hxz3jux591fw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -796,7 +797,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/25/JavaScript Bad Parts/" data-id="cimf02ydb0003lvz369kc375z" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/25/JavaScript Bad Parts/" data-id="cimgf3ta70000hxz3xcts0hjc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -872,7 +873,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="tanhanjay.top/2016/03/20/JavaScript的毒瘤/" data-id="cimf02yd20000lvz36fgdzndj" class="article-share-link">Share</a>
+      <a data-url="tanhanjay.top/2016/03/20/JavaScript的毒瘤/" data-id="cimgf3tad0001hxz309xd412l" class="article-share-link">Share</a>
       
       
     </footer>
